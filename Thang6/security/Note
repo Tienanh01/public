@@ -1,0 +1,4 @@
+Spring security là một trong những core feature quan trọng của spring framework nó giúp chúng ta
+phân quyền và xác thực người dùng trước khi cho phép họ truy cập vào các tài nguyên của chúng ta
+
+B1  : chuẩn bị thư viện  spring-web , spring-security , thyleaf

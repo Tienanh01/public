@@ -1,0 +1,162 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- CSS -->
+<!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+
+<!-- JavaScript và các plugin -->
+<!-- <script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+
+
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+
+
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+
+// function encrypt() {
+//     var key = CryptoJS.enc.Utf8.parse('mysecretpassword');
+//     var iv = CryptoJS.enc.Utf8.parse('mysecretpassword');
+//     var value = CryptoJS.enc.Utf8.parse('22aXo0XqjcWnXScaevvEJeFK5HustM+jAp9aOfoQpFg=')
+
+//     var encryptValue = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse('Hello, world!'), key, {
+//       keySize: 128 / 8,
+//       iv: iv,
+//       mode: CryptoJS.mode.CBC,
+//       padding: CryptoJS.pad.Pkcs7
+//     })
+//     return encryptValue.toString();
+//   }
+
+  function decrypt() {
+    var key = CryptoJS.enc.Utf8.parse('mysecretpasswordmysecretpassword');
+    var iv = CryptoJS.enc.Utf8.parse('mysecretpassword');
+    var d = CryptoJS.AES.decrypt('/D01TDYMqFF3+ySX+jHReA====', key, {
+      keySize: 128 / 8,
+      iv: iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7
+    })
+    return CryptoJS.enc.Utf8.stringify(d);
+  }
+
+
+
+
+//   console.log(encrypt());
+
+  console.log("giải mã ");
+
+  console.log(decrypt());
+    </script>
+
+    <h1>Hello</h1>
+   <table class="table table-striped" id="example" style="width: 100%;">
+
+
+        <thead>
+            <tr id="list-header">
+                <th scope="col">ID</th>
+                <th scope="name">Name</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1
+                </td>
+                <td>Tien anh</td>
+                <td>hackme</td>
+                <td>Email</td>
+            </tr>
+        </tbody>
+</table>
+ 
+
+
+
+</body>
+
+<style>
+
+.dataTables_length {
+  display: none;
+}
+</style>
+<script src="datatable.js"></script>
+<script>
+    $(document).ready(function() {
+
+        array.initDataTable();
+    // Đoạn mã JavaScript sẽ được thực thi khi toàn bộ cấu trúc HTML đã được tải xong
+    $("#list-header").on({
+       
+        mouseenter: function(){
+            $(this).css("background-color","lightgray");
+        },
+        mouseleave: function(){
+            $(this).css("background-color","lightblue")
+        }
+    })
+
+    $("#example tbody tr").on({
+        mouseenter: function(){
+            $(this).css("background-color","lightgray");
+        },
+        mouseleave: function(){
+            $(this).css("background-color","lightblue")
+        }
+    })
+  });
+  console.log("tesst");
+
+  var settings = {
+  "url": "http://localhost:8081/people/add-people",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({
+    "id": 4,
+    "name": "anh21212",
+    "address": "hai duong21"
+  }),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+</script>
+
+
+
+
+</html>
